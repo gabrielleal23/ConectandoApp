@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F9F9F9"
+    tools:ignore="MissingDefaultResource">
+
+
+
+    <!-- Título de la lista -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contenido de la Mentoria"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Lista de contenidos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerContenidos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:clipToPadding="false" />
+
+    <!-- Sección para ingresar nuevo contenido -->
+    <TextView
+        android:id="@+id/titulocont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar nuevo contenido"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etContenidoExtra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe aquí..."
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:gravity="top|start"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_border"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <!-- Botones alineados a la derecha -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnGuardarContenido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:backgroundTint="@color/empresa_boton_verde"
+            android:background="@drawable/boton_gradiente"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:background="@drawable/boton_gradiente"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/suave_boton_primario"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

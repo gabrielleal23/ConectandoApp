@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginHorizontal="12dp"
+    android:elevation="2dp"
+    android:backgroundTint="#FFFFFF"
+    android:backgroundTintMode="src_in"
+    android:background="@drawable/background_item_mentor"
+    android:clipToPadding="false"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tvTema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tema de la mentoría"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/inscritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estudiantes Inscritos"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnVerContenidos"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/boton_gradiente"
+        android:text="Ver contenidos"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/futuro_boton_primario"
+        android:textColor="#FFFFFF"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:layout_gravity="end" />
+</LinearLayout>

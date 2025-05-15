@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Panel de Administración"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnUsuariosadmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestionar Usuarios"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:paddingVertical="12dp"/>
+
+    <Button
+        android:id="@+id/btnPostulaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestion de Postulaciones"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:paddingVertical="12dp"/>
+
+    <Button
+        android:id="@+id/btnOfertas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestion de Mentorias"
+        android:backgroundTint="#FF9800"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="32dp"
+        android:paddingVertical="12dp"/>
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesión"
+        android:backgroundTint="#F44336"
+        android:textColor="#FFFFFF"
+        android:paddingVertical="14dp"
+        android:elevation="4dp"/>
+</LinearLayout>

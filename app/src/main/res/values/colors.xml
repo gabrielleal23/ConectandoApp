@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="darker_gray">#706F6F</color>
+    <color name="orange">#FF5722</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#FF0000</color>
+    <color name="tiffany_blue">#86b8b1</color>
+    <color name="verde_oliva">#8BC34A</color>
+    <color name="futuro_fondo">#FFFFFF</color> <!-- Blanco puro -->
+    <color name="futuro_texto_primario">#2D2D2D</color> <!-- Gris oscuro -->
+    <color name="futuro_borde">#E0E0E0</color> <!-- Gris claro -->
+    <color name="futuro_boton_primario">#007BFF</color> <!-- Azul eléctrico -->
+    <color name="futuro_boton_secundario">#B0BEC5</color> <!-- Gris metálico -->
+    <color name="futuro_boton_hover">#81D4FA</color> <!-- Azul cielo -->
+    <color name="neon_fondo">#F5F5F5</color> <!-- Blanco con tinte azulado -->
+    <color name="neon_texto">#000000</color> <!-- Negro -->
+    <color name="neon_resaltado">#00FFFF</color> <!-- Azul neón -->
+    <color name="neon_borde">#8A2BE2</color> <!-- Morado neón -->
+    <color name="neon_boton_primario">#8A2BE2</color> <!-- Morado neón -->
+    <color name="neon_boton_secundario">#00C853</color> <!-- Verde neón -->
+    <color name="suave_fondo">#F8F9FA</color> <!-- Blanco marfil -->
+    <color name="suave_texto">#1E3A8A</color> <!-- Azul oscuro -->
+    <color name="suave_borde">#D1D1D1</color> <!-- Gris claro -->
+    <color name="suave_boton_primario">#3F51B5</color> <!-- Azul oscuro -->
+    <color name="suave_boton_hover">#64B5F6</color> <!-- Celeste -->
+    <color name="suave_boton_secundario">#8BC34A</color> <!-- Verde oliva -->
+    <color name="gris_claro">#F8F9FA</color> <!-- Verde oliva -->#F8F9FA
+    <color name="botones_principal">#111827</color> <!-- Verde oliva -->#F8F9FA
+   <!-- Turquesa claro -->
+
+    <color name="empresa_boton_principal">#1D4ED8</color>     <!-- Azul Corporativo -->
+    <color name="empresa_boton_secundario">#3B82F6</color>    <!-- Azul Claro -->
+    <color name="empresa_boton_verde">#10B981</color>         <!-- Verde Jade -->
+    <color name="empresa_boton_gris">#374151</color>          <!-- Gris Oscuro -->
+    <color name="empresa_boton_amarillo">#FBBF24</color>      <!-- Amarillo Destacado -->
+    <color name="empresa_boton_rojo">#EF4444</color>          <!-- Rojo Coral (advertencia) -->
+    <color name="empresa_boton_morado">#8B5CF6</color>        <!-- Morado Elegante -->
+
+
+    <color name="colorPrimary">#0A66C2</color>       <!-- Azul corporativo -->
+
+
+    <color name="colorJobs">#4A90E2</color>         <!-- Azul brillante, pero más suave y sofisticado -->
+    <color name="colorProfile">#8E9CA7</color>      <!-- Gris plateado frío, elegante -->
+    <color name="colorPayment">#5AC8FA</color>      <!-- Azul cian, pero menos saturado que en el estilo neón -->
+    <color name="colorHistory">#F1C40F</color>      <!-- Amarillo oro, pero suave y con un toque metálico -->
+    <color name="colorSupport">#FF6F61</color>      <!-- Coral suave, futurista pero no tan intenso -->
+    <color name="colorMentors">#A0B0B9</color>      <!-- Gris frío metálico, adecuado para detalles secundarios -->
+
+
+    <color name="textColorPrimary">#111827</color>  <!-- Negro casi puro -->
+    <color name="textColorSecondary">#6B7280</color> <!-- Gris oscuro -->
+
+
+    <!-- Colores principales - más azules -->
+    <color name="color_primario">#1E88E5</color> <!-- Azul vibrante principal -->
+    <color name="color_primario_hover">#42A5F5</color> <!-- Azul más claro al presionar -->
+    <color name="color_secundario">#90CAF9</color> <!-- Azul muy claro para fondos o secundarios -->
+
+    <!-- Colores para estados -->
+    <color name="color_exito">#4CAF50</color> <!-- Verde éxito -->
+    <color name="color_advertencia">#FFC107</color> <!-- Amarillo más cálido para advertencias -->
+    <color name="color_error">#E53935</color> <!-- Rojo para errores o cierre sesión -->
+
+    <!-- Soporte visual -->
+    <color name="color_informativo">#29B6F6</color> <!-- Azul cielo para íconos informativos -->
+
+    <!-- Fondos y textos -->
+    <color name="color_fondo_claro">#E3F2FD</color> <!-- Fondo azul super claro -->
+    <color name="color_texto_oscuro">#0D47A1</color> <!-- Azul marino oscuro para textos fuertes -->
+    <color name="color_desactivado">#B0BEC5</color> <!-- Gris suave para desactivado -->
+
+
+</resources>

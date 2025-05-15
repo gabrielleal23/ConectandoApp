@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@android:color/white"
+    android:elevation="2dp"
+    android:layout_marginBottom="12dp"
+    tools:ignore="MissingDefaultResource">
+
+    <!-- ID del Usuario -->
+    <TextView
+        android:id="@+id/tvUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Usuario: "
+        android:textStyle="bold" />
+
+    <!-- Puesto -->
+    <TextView
+        android:id="@+id/tvPuesto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puesto: " />
+
+    <!-- Descripción -->
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción: " />
+
+
+
+    <!-- Ubicación -->
+    <TextView
+        android:id="@+id/tvUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicación: " />
+
+    <!-- Horario -->
+    <TextView
+        android:id="@+id/tvHorario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario: " />
+
+    <!-- Pago por Hora -->
+    <TextView
+        android:id="@+id/tvPagoHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pago por Hora: " />
+
+    <!-- Requisitos -->
+    <TextView
+        android:id="@+id/tvRequisitos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Requisitos: " />
+
+    <TextView
+        android:id="@+id/tvPostulante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Postulante: " />
+
+
+    <TextView
+        android:id="@+id/tvEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado: "
+        android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnFinalizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:backgroundTint="@color/neon_boton_secundario"
+            android:text="Finalizar" />
+
+
+</LinearLayout>
+

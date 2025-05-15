@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Publicar Oferta de Trabajo"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/suave_texto"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:id="@+id/etPuesto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Puesto de trabajo"
+        android:inputType="text"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etUbicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ubicación"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etRequisitos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Requisitos"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etHorario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Horario"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etHoras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Horas de trabajo"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etPagoHora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pago por hora"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darker_gray" />
+
+    <Button
+        android:id="@+id/btnPublicar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Publicar Oferta"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/suave_boton_primario"
+        android:textColor="@color/white"
+        android:background="@drawable/boton_gradiente"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/boton_gradiente"
+        android:backgroundTint="@color/verde_oliva"
+        android:textColor="@color/gris_claro"
+        android:padding="12dp" />
+
+</LinearLayout>

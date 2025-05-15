@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:ignore="MissingDefaultResource">
+
+    <!-- Título de la actividad -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contenidos de Mentoría"
+        android:layout_marginTop="70dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Lista de mentorías -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclermentorias"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        android:elevation="4dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botón de volver -->
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Volver"
+        android:backgroundTint="#3F51B5"
+        android:textColor="@android:color/white"
+        android:background="@drawable/boton_gradiente"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="4dp" />
+
+</LinearLayout>

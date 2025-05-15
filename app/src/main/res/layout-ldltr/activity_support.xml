@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envia Tu Mensaje a Soporte"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@android:color/black"
+        android:paddingBottom="10dp" />
+
+    <EditText
+        android:id="@+id/etMensajeSoporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe tu mensaje aquí"
+        android:inputType="textMultiLine"
+        android:minHeight="200dp"
+        android:gravity="top"
+        android:background="@android:drawable/editbox_background" />
+
+    <Button
+        android:id="@+id/btnEnviarSoporte"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/empresa_boton_verde"
+        android:textColor="@android:color/white"
+        android:text="Enviar Mensaje"
+        android:background="@drawable/boton_gradiente"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Volver"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/boton_gradiente"
+        android:backgroundTint="@color/suave_boton_primario"
+        />
+</LinearLayout>

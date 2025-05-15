@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9FAFB"
+    android:gravity="center"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nuestro Portafolio de Servicios"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#111827"
+            android:layout_marginBottom="24dp" />
+
+        <!-- GRID DE SERVICIOS -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:rowOrderPreserved="false"
+            android:useDefaultMargins="true">
+
+            <!-- Card base reutilizable -->
+            <!-- 1. POSTÚLATE A EMPLEOS -->
+            <LinearLayout
+                android:id="@+id/btnViewJobs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_gray"
+                android:backgroundTint ="@color/color_primario_hover"                android:elevation="4dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_send"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POSTÚLATE A EMPLEOS"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_texto_oscuro"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- 2. TU PERFIL -->
+            <LinearLayout
+                android:id="@+id/btnProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_gray"
+                android:backgroundTint ="@color/color_secundario"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_myplaces"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TU PERFIL"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_texto_oscuro"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnPaymentMethod"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_gray"
+                android:backgroundTint ="@color/color_secundario"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+
+                    android:src="@android:drawable/ic_menu_save"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POSTULACIONES PAGADAS"
+                    android:textSize="13sp"
+                    android:textColor="@color/color_texto_oscuro"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- 4. HISTORIAL DE POSTULACIONES -->
+            <LinearLayout
+                android:id="@+id/btnHistory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_gray"
+                android:backgroundTint ="@color/color_primario_hover"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_recent_history"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HISTORIAL DE POSTULACIONES"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_texto_oscuro"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- 5. SOPORTE TÉCNICO -->
+            <LinearLayout
+                android:id="@+id/btnSupport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_gray"
+                android:backgroundTint ="@color/color_primario_hover"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_help"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SOPORTE TÉCNICO"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_texto_oscuro"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- 6. MENTORÍAS -->
+            <LinearLayout
+                android:id="@+id/btnMentors"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:backgroundTint ="@color/color_secundario"
+                android:background="@drawable/rounded_gray"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_agenda"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MENTORÍAS"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_texto_oscuro"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </GridLayout>
+
+        <!-- Botón de Cerrar Sesión -->
+        <Button
+            android:id="@+id/btnCerrarSesionstuden"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:text="Cerrar Sesión"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/boton_gradiente"
+            android:layout_marginTop="32dp"
+            android:padding="1dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+

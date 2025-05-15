@@ -1,0 +1,152 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="👤 Ver y Editar Perfil"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:textColor="#212121" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Completo"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:gravity=""
+        android:layout_marginBottom="1dp"
+        android:textColor="#212121" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:padding="14dp"
+        android:background="@android:drawable/edit_text"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cedula"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:gravity=""
+        android:layout_marginBottom="1dp"
+        android:textColor="#212121" />
+
+
+    <EditText
+        android:id="@+id/etCedula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cédula"
+        android:inputType="number"
+        android:padding="14dp"
+        android:background="@android:drawable/edit_text"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Telefono"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:gravity=""
+        android:layout_marginBottom="1dp"
+        android:textColor="#212121" />
+
+
+    <EditText
+        android:id="@+id/etTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono"
+        android:inputType="phone"
+        android:padding="14dp"
+        android:background="@android:drawable/edit_text"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correo Electronico"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:gravity=""
+        android:layout_marginBottom="1dp"
+        android:textColor="#212121" />
+
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electrónico"
+        android:textSize="16sp"
+        android:textColor="#616161"
+        android:enabled="false"
+        android:padding="14dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rol del Perfil"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:gravity=""
+        android:layout_marginBottom="1dp"
+        android:textColor="#212121" />
+
+
+
+    <Spinner
+        android:id="@+id/spinnerRoledit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/spinner_background"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Guardar Cambios"
+        android:textSize="16sp"
+        android:backgroundTint="@color/empresa_boton_verde"
+        android:background="@drawable/boton_gradiente"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:padding="1dp" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Volver"
+        android:textSize="16sp"
+        android:backgroundTint="@color/suave_boton_primario"
+        android:textColor="@android:color/white"
+        android:background="@drawable/boton_gradiente"
+        android:padding="1dp"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>

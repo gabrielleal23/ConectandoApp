@@ -1,2 +1,5 @@
-package com.example.conectandoapp 
+package com.example.conectandoapp
 
+class MentorsAdminActivity {
+
+}
