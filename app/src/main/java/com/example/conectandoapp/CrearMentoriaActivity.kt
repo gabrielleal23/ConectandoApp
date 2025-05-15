@@ -1,9 +1,9 @@
 package com.example.conectandoapp
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -19,11 +19,13 @@ class CrearMentoriaActivity : AppCompatActivity() {
     private lateinit var etHorario: EditText
     private lateinit var etDuracion: EditText
     private lateinit var btnPublicar: Button
+    private lateinit var btnVolver: Button
+    private lateinit var tvTitulo: TextView
 
     private var mentoriaId: String? = null
     private var estudiantesInscritos = 0
+    private var esAdmin: Boolean = false
 
-    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_mentoria)
@@ -31,21 +33,24 @@ class CrearMentoriaActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        val btnVolver = findViewById<Button>(R.id.btnVolver)
         etTema = findViewById(R.id.etTema)
         etDescripcion = findViewById(R.id.etDescripcion)
         etHorario = findViewById(R.id.etHorario)
         etDuracion = findViewById(R.id.etDuracion)
         btnPublicar = findViewById(R.id.btnPublicarMentoria)
+        btnVolver = findViewById(R.id.btnVolver)
+        tvTitulo = findViewById(R.id.tvTitulo)
 
-        btnVolver.setOnClickListener { finish() }
-
-        // Si viene con ID, es edición
         mentoriaId = intent.getStringExtra("mentoriaId")
+        esAdmin = intent.getBooleanExtra("modo_admin", false)
 
         if (mentoriaId != null) {
+            tvTitulo.text = if (esAdmin) "Editar Mentoría (Admin)" else "Editar Mentoría"
             btnPublicar.text = "Actualizar"
             cargarMentoria()
+        } else {
+            tvTitulo.text = "Crear Nueva Mentoría"
+            btnPublicar.text = "Publicar"
         }
 
         btnPublicar.setOnClickListener {
@@ -54,6 +59,10 @@ class CrearMentoriaActivity : AppCompatActivity() {
             } else {
                 crearMentoria()
             }
+        }
+
+        btnVolver.setOnClickListener {
+            finish()
         }
     }
 
@@ -68,9 +77,11 @@ class CrearMentoriaActivity : AppCompatActivity() {
                     etDuracion.setText(doc.getString("duracion") ?: "")
                     estudiantesInscritos = (doc.getLong("estudiantesInscritos") ?: 0).toInt()
 
-                    if (estudiantesInscritos > 0) {
+                    if (estudiantesInscritos > 0 && !esAdmin) {
                         Toast.makeText(this, "Esta mentoría tiene estudiantes inscritos. No se puede editar.", Toast.LENGTH_LONG).show()
                         btnPublicar.isEnabled = false
+                    } else {
+                        btnPublicar.isEnabled = true
                     }
                 }
             }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMentorias"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Mentorías"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="70dp" />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMentorias"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp" />
+
+    <Button
+        android:id="@+id/btnAgregarMentoria"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="+"
+        android:backgroundTint="@color/suave_boton_primario"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="end"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/boton_gradiente" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Volver"
+        android:background="@drawable/boton_gradiente"
+        android:backgroundTint="@color/suave_boton_primario"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="12dp" />
+</LinearLayout>

@@ -41,7 +41,11 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerContenidos)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+
         mentoriaId = intent.getStringExtra("MENTORIA_ID") ?: ""
+
+
 
         val btnVolver: Button = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener { finish() }
@@ -85,9 +89,10 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
                // Toast.makeText(this, "Rol encontrado: $rol", Toast.LENGTH_SHORT).show()
 
                 if (rol != null) {
-                    val esMentor = rol == "Mentor"
+                    val puedeAgregarContenido = (rol == "Mentor" || rol == "Admin")
 
-                    if (esMentor) {
+
+                    if (puedeAgregarContenido) {
                         etContenido.visibility = View.VISIBLE
                         btnGuardarContenido.visibility = View.VISIBLE
                         textotit.visibility = View.VISIBLE

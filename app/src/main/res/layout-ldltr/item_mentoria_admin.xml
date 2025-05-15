@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemMentoria"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    android:elevation="2dp"
+    android:layout_marginBottom="8dp"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/tvMentoriaTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Título de la mentoría"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tvMentoriaDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción breve de la mentoría"
+        android:textSize="14sp"
+        android:textColor="#555555"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEditMentoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#FFFFFF"
+            />
+
+
+        <Button
+            android:id="@+id/btnDeleteMentoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnContenidoMentoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contenido"
+            android:backgroundTint="@color/purple_700"
+            android:textColor="#FFFFFF"
+            />
+    </LinearLayout>
+</LinearLayout>
