@@ -51,7 +51,7 @@ class PagoPostulacionActivity : AppCompatActivity() {
 
         listener = db.collection("ofertas")
             .whereEqualTo("usuarioId", userId)
-            .whereEqualTo("estado", "Finalizada")
+            .whereIn("estado", listOf("Finalizada", "Pagada")) // Mostrar ambas
             .addSnapshotListener { result, error ->
                 if (error != null) {
                     Toast.makeText(this, "Error al cargar ofertas", Toast.LENGTH_SHORT).show()
@@ -64,6 +64,7 @@ class PagoPostulacionActivity : AppCompatActivity() {
 
                 for (document in result!!) {
                     try {
+                        val estadoReal = document.getString("estado") ?: "Finalizada"
                         val puesto = document.getString("puesto") ?: ""
                         val horas = document.getLong("horas")?.toInt() ?: 0
                         val pagoHora = document.getDouble("pagoHora") ?: 0.0
@@ -82,7 +83,7 @@ class PagoPostulacionActivity : AppCompatActivity() {
                             puesto = puesto,
                             horas = horas,
                             pagoHora = pagoHora,
-                            estado = "Finalizada",
+                            estado = estadoReal,  // Aquí pasamos el estado real
                             trabajador = trabajador
                         )
 
@@ -94,7 +95,7 @@ class PagoPostulacionActivity : AppCompatActivity() {
                     }
                 }
 
-                totalPagosTextView.text = "Total a pagar: $${String.format("%.2f", totalGeneral)}"
+                totalPagosTextView.text = "Total Pagado: $${String.format("%.2f", totalGeneral)}"
                 adapter.notifyDataSetChanged()
             }
     }
@@ -104,7 +105,7 @@ class PagoPostulacionActivity : AppCompatActivity() {
         val puesto: String = "",
         val horas: Int = 0,
         val pagoHora: Double = 0.0,
-        val estado: String = "",
+        var estado: String = "Finalizada",
         val trabajador: Trabajador3 = Trabajador3()
     )
 
@@ -134,16 +135,26 @@ class PagoPostulacionActivity : AppCompatActivity() {
             holder.tvTitulo.text = offer.puesto
             holder.tvTotalPago.text = "Pago: $${String.format("%.2f", total)}"
 
-            holder.btnPagar.setOnClickListener {
-                val db = FirebaseFirestore.getInstance()
-                db.collection("ofertas").document(offer.id)
-                    .update("estado", "Pagada")
-                    .addOnSuccessListener {
-                        Toast.makeText(this@PagoPostulacionActivity, "✅ Pago registrado", Toast.LENGTH_SHORT).show()
-                    }
-                    .addOnFailureListener {
-                        Toast.makeText(this@PagoPostulacionActivity, "❌ Error al pagar", Toast.LENGTH_SHORT).show()
-                    }
+            if (offer.estado == "Pagada") {
+                holder.btnPagar.visibility = View.GONE  // Oculta el botón si ya pagada
+            } else {
+                holder.btnPagar.visibility = View.VISIBLE
+                holder.btnPagar.text = "Pagar"
+                holder.btnPagar.isEnabled = true
+
+                holder.btnPagar.setOnClickListener {
+                    val db = FirebaseFirestore.getInstance()
+                    db.collection("ofertas").document(offer.id)
+                        .update("estado", "Pagada")
+                        .addOnSuccessListener {
+                            Toast.makeText(this@PagoPostulacionActivity, "✅ Pago registrado", Toast.LENGTH_SHORT).show()
+                            offer.estado = "Pagada"              // Actualizar el estado local
+                            notifyItemChanged(position)         // Refrescar solo ese ítem
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this@PagoPostulacionActivity, "❌ Error al pagar", Toast.LENGTH_SHORT).show()
+                        }
+                }
             }
         }
 

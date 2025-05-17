@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:background="@android:color/white"
-    android:layout_marginBottom="8dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    android:backgroundTint="@android:color/white"
     tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
 
     <TextView
         android:id="@+id/tvTitulo"
@@ -15,7 +23,8 @@
         android:layout_height="wrap_content"
         android:text="Puesto"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="#111827"/>
 
     <TextView
         android:id="@+id/tvTotalPago"
@@ -25,9 +34,14 @@
 
     <Button
         android:id="@+id/btnPagar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@color/neon_boton_secundario"
-        android:text="Pagar"/>
+        android:text="Pagar"
+        android:background="@drawable/boton_gradiente"
+        android:textColor="#FFFF"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

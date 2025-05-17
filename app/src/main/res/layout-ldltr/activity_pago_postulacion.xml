@@ -5,26 +5,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/white"
-    android:gravity="center_horizontal"
+    android:background="#FAFAFA"
     tools:ignore="MissingDefaultResource">
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pagos Pendientes"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="70dp"/>
+        android:textColor="#111827"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/tvTotalGeneral"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total a pagar: $0.00"
+        android:text="Total Pagado: $0.00"
         android:textSize="18sp"
-        android:padding="8dp"/>
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"
+        android:textColor="#1A237E"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPagos"
@@ -36,11 +39,11 @@
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/boton_gradiente"
-        android:backgroundTint="@color/verde_oliva"
         android:text="Volver"
-        android:textColor="@android:color/white"
-        android:textSize="16sp" />
+        android:layout_marginTop="1dp"
+        android:background="@drawable/boton_gradiente"
+        android:backgroundTint="@color/suave_boton_primario"
+        android:textColor="@color/gris_claro"
+        android:textSize="16sp"  />
 
 </LinearLayout>

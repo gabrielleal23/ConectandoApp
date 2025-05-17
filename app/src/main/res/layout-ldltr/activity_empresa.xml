@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:background="#F9FAFB"
     tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:gravity="center_horizontal">
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
         android:text="Gestion De Postulaciones"
-        android:textColor="@android:color/black"
-        android:textSize="21sp"
-        android:textStyle="bold" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#111827"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/empresaName"
@@ -28,21 +33,22 @@
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alignmentMode="alignMargins"
-        android:columnCount="2"
-        android:padding="8dp"
-        android:rowCount="3">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true"
+            android:padding="4dp">
 
         <!-- Botón Crear Postulación -->
         <LinearLayout
             android:id="@+id/btnCrearPostulacion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_gray"
             android:backgroundTint="@color/color_primario_hover"
@@ -54,14 +60,16 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
                 android:src="@android:drawable/ic_menu_add" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Crear Postulación"
+                android:text="CREAR POSTULACIÒN"
+                android:gravity="center"
                 android:textColor="@color/color_texto_oscuro"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -71,11 +79,11 @@
             android:id="@+id/btnVerPostulaciones"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_gray"
-            android:backgroundTint ="@color/color_secundario"
+            android:backgroundTint="@color/color_secundario"
             android:clickable="true"
             android:elevation="4dp"
             android:focusable="true"
@@ -84,14 +92,16 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
                 android:src="@android:drawable/ic_menu_view" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ver Postulaciones"
+                android:gravity="center"
+                android:text="VER POSTULACIÒN"
                 android:textColor="@color/color_texto_oscuro"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -101,11 +111,11 @@
             android:id="@+id/btnPago"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_gray"
-            android:backgroundTint ="@color/color_secundario"
+            android:backgroundTint="@color/color_secundario"
             android:clickable="true"
             android:elevation="4dp"
             android:focusable="true"
@@ -114,14 +124,16 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
                 android:src="@android:drawable/ic_menu_agenda" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pago por Postulación"
+                android:text="PAGO POR POSTULACIÒN"
+                android:gravity="center"
                 android:textColor="@color/color_texto_oscuro"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -131,8 +143,8 @@
             android:id="@+id/btnEditar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_gray"
             android:backgroundTint="@color/color_primario_hover"
@@ -144,15 +156,16 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
                 android:src="@android:drawable/ic_menu_edit" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Editar y Eliminar Postulaciones"
+                android:text="EDITAR Y ELIMINAR POSTULACIONES"
                 android:textColor="@color/color_texto_oscuro"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -161,8 +174,8 @@
             android:id="@+id/btnSupport"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_gray"
             android:backgroundTint="@color/color_primario_hover"
@@ -174,15 +187,16 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
                 android:src="@android:drawable/ic_menu_help" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Soporte"
+                android:text="SOPORTE"
                 android:textColor="@color/color_texto_oscuro"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -193,11 +207,11 @@
             android:id="@+id/btnPerfil"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_gray"
-            android:backgroundTint ="@color/color_secundario"
+            android:backgroundTint="@color/color_secundario"
             android:clickable="true"
             android:elevation="4dp"
             android:focusable="true"
@@ -206,14 +220,15 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
                 android:src="@android:drawable/ic_menu_myplaces"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tu Perfil"
+                android:text="TU PERFIL"
                 android:textColor="@color/color_texto_oscuro"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -227,10 +242,14 @@
         android:layout_height="40dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/boton_gradiente"
-        android:backgroundTint="@color/red"
+
         android:padding="1dp"
         android:text="Cerrar Sesión"
         android:textColor="@android:color/white"
         android:textSize="15sp"
-        android:textStyle="bold" />
-</LinearLayout>
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/holo_red_dark"/>
+
+    </LinearLayout>
+
+</ScrollView >

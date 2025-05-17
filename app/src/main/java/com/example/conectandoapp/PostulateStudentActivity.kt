@@ -42,7 +42,7 @@ class PostulateStudentActivity : AppCompatActivity() {
     private fun cargarOfertasDesdeFirestore() {
         val db = FirebaseFirestore.getInstance()
         db.collection("ofertas")
-            .whereEqualTo("estado", "pendiente")
+            .whereEqualTo("estado", "Pendiente")
             .addSnapshotListener { snapshots, e ->
                 if (e != null) {
                     Toast.makeText(this, "Error al cargar ofertas", Toast.LENGTH_SHORT).show()

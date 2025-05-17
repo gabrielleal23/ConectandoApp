@@ -76,8 +76,13 @@ class CrearOfertaActivity : AppCompatActivity() {
                 "horario" to horario,
                 "pagoHora" to pagoHora.toDouble(), // Almacenar como número decimal
                 "usuarioId" to userId, // Guardar el ID del usuario que creó la oferta
-                "estado" to "pendiente", // Estado por defecto
-                "trabajador" to "No asignado" // trabajador por defecto
+                "estado" to "Pendiente", // Estado por defecto
+                // 👇 Aquí se guarda como objeto (mapa) correctamente
+                "trabajador" to mapOf(
+                    "nombre" to "No asignado",
+                    "correo" to "",
+                    "telefono" to ""
+                )
             )
 
             // Guardar en Firebase Firestore

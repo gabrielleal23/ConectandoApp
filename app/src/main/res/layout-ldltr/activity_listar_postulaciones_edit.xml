@@ -5,20 +5,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/white"
-    android:gravity="center_horizontal"
+    android:background="#FAFAFA"
     tools:ignore="MissingDefaultResource">
 
     <TextView
         android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Editar o Eliminar Postulaciones"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:textColor="#333333"
-        android:layout_marginTop="70dp"/>
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/tvSinOfertas"
@@ -40,10 +41,11 @@
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:backgroundTint="@color/verde_oliva"
-        android:background="@drawable/boton_gradiente"
-        android:textColor="@android:color/white"
         android:text="Volver"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="1dp"
+        android:background="@drawable/boton_gradiente"
+        android:backgroundTint="@color/suave_boton_primario"
+        android:textColor="@color/gris_claro"
+        android:textSize="16sp"/>
 
 </LinearLayout>

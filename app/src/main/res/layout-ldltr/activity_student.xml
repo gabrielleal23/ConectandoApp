@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="12dp"
         android:gravity="center_horizontal">
 
         <!-- TÍTULO -->
@@ -247,8 +247,7 @@
             android:background="@drawable/boton_gradiente"
             android:layout_marginTop="32dp"
             android:padding="1dp"
-            android:backgroundTint="@android:color/holo_red_dark"
-            />
+            android:backgroundTint="@android:color/holo_red_dark" />
     </LinearLayout>
 
 </ScrollView >

@@ -41,7 +41,7 @@ class ListarPostulacionEdit : AppCompatActivity() {
 
         FirebaseFirestore.getInstance().collection("ofertas")
             .whereEqualTo("usuarioId", userId)
-            .whereEqualTo("estado", "pendiente")
+            .whereEqualTo("estado", "Pendiente")
             .addSnapshotListener { snapshots, error ->
                 if (error != null) {
                     Log.e("Postulaciones", "❌ Error al obtener datos", error)

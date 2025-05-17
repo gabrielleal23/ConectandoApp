@@ -110,7 +110,7 @@
         android:layout_height="wrap_content"
         android:text="Publicar Oferta"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/suave_boton_primario"
+        android:backgroundTint="@color/empresa_boton_verde"
         android:textColor="@color/white"
         android:background="@drawable/boton_gradiente"
         android:padding="12dp" />
@@ -122,7 +122,7 @@
         android:text="Volver"
         android:layout_marginTop="10dp"
         android:background="@drawable/boton_gradiente"
-        android:backgroundTint="@color/verde_oliva"
+        android:backgroundTint="@color/suave_boton_primario"
         android:textColor="@color/gris_claro"
         android:padding="12dp" />
 

@@ -23,7 +23,7 @@ data class Postulacion(
     val horario: String = "",
     val pagoHora: Double = 0.0,
     val requisitos: String = "",
-    val estado: String = "Pendiente",
+    var estado: String = "",
     var trabajador: Trabajador2 = Trabajador2()
 )
 
@@ -62,6 +62,7 @@ class VerPostulacionesActivity : AppCompatActivity() {
         if (id != null) {
             db.collection("ofertas")
                 .whereEqualTo("usuarioId", id)
+                .whereIn("estado", listOf("Pendiente", "Aceptada", "Finalizada", "Pagada"))
                 .addSnapshotListener { snapshots, e ->
                     if (e != null) {
                         Log.e("Firestore", "❌ Error al escuchar cambios", e)
@@ -71,13 +72,7 @@ class VerPostulacionesActivity : AppCompatActivity() {
                         listaPostulaciones.clear()
                         for (document in snapshots) {
                             try {
-                                val data = document.data
 
-                                val trabajadorMap = data["trabajador"]
-                                if (trabajadorMap !is Map<*, *>) {
-                                    Log.w("Postulaciones", "❗Trabajador mal formado en documento ${document.id}. Saltando...")
-                                    continue // Evita crash
-                                }
 
                                 val postulacion = document.toObject(Postulacion::class.java).copy(id = document.id)
                                 listaPostulaciones.add(postulacion)

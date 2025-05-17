@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:background="@android:color/white"
-    android:elevation="2dp"
-    android:layout_marginBottom="12dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    android:backgroundTint="@android:color/white"
     tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
 
     <!-- ID del Usuario -->
     <TextView
@@ -16,21 +23,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID Usuario: "
-        android:textStyle="bold" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#1A237E" />
 
     <!-- Puesto -->
     <TextView
         android:id="@+id/tvPuesto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Puesto: " />
+        android:text="Puesto: "
+        android:textColor="#424242"/>
 
     <!-- Descripción -->
     <TextView
         android:id="@+id/tvDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descripción: " />
+        android:text="Descripción: "
+        android:textColor="#424242"/>
 
 
 
@@ -39,34 +50,39 @@
         android:id="@+id/tvUbicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ubicación: " />
+        android:text="Ubicación: "
+        android:textColor="#424242"/>
 
     <!-- Horario -->
     <TextView
         android:id="@+id/tvHorario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Horario: " />
+        android:text="Horario: "
+        android:textColor="#424242"/>
 
     <!-- Pago por Hora -->
     <TextView
         android:id="@+id/tvPagoHora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pago por Hora: " />
+        android:text="Pago por Hora: "
+        android:textColor="#424242"/>
 
     <!-- Requisitos -->
     <TextView
         android:id="@+id/tvRequisitos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Requisitos: " />
+        android:text="Requisitos: "
+        android:textColor="#424242"/>
 
     <TextView
         android:id="@+id/tvPostulante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Postulante: " />
+        android:text="Postulante: "
+        android:textColor="#424242"/>
 
 
     <TextView
@@ -74,7 +90,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Estado: "
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="#424242"/>
 
         <Button
             android:id="@+id/btnFinalizar"
@@ -83,8 +100,10 @@
             android:textColor="@color/white"
             android:visibility="gone"
             android:backgroundTint="@color/neon_boton_secundario"
+            android:background="@drawable/boton_gradiente"
             android:text="Finalizar" />
 
 
-</LinearLayout>
+    </LinearLayout>
 
+</androidx.cardview.widget.CardView>

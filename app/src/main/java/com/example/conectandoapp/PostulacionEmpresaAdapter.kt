@@ -50,6 +50,7 @@ class PostulacionEmpresaAdapter(private val listaPostulaciones: List<Postulacion
 
         if (postulacion.estado == "Aceptada") {
             holder.btnFinalizar.visibility = View.VISIBLE
+            holder.btnFinalizar.isEnabled = true
 
             holder.btnFinalizar.setOnClickListener {
                 val db = FirebaseFirestore.getInstance()
@@ -57,14 +58,18 @@ class PostulacionEmpresaAdapter(private val listaPostulaciones: List<Postulacion
                     .update("estado", "Finalizada")
                     .addOnSuccessListener {
                         Toast.makeText(holder.itemView.context, "✅ Oferta finalizada", Toast.LENGTH_SHORT).show()
-                        holder.btnFinalizar.visibility = View.GONE // Oculta el botón después
+                        // Cambia el estado localmente para actualizar UI
+                        postulacion.estado = "Finalizada"
+                        holder.tvEstado.text = "Estado: Finalizada"
+                        holder.btnFinalizar.visibility = View.GONE
                     }
                     .addOnFailureListener {
                         Toast.makeText(holder.itemView.context, "❌ Error al finalizar", Toast.LENGTH_SHORT).show()
                     }
             }
-
-
+        } else {
+            // Para cualquier otro estado, oculta el botón
+            holder.btnFinalizar.visibility = View.GONE
         }
 
     }

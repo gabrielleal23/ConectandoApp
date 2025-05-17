@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="20dp"
+    android:padding="16dp"
     tools:ignore="MissingDefaultResource">
 
     <LinearLayout
@@ -19,16 +19,19 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Repite la estructura de label + EditText para cada campo -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Puesto"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/etPuesto"
@@ -41,15 +44,16 @@
             android:textColor="@color/black"
             android:textColorHint="@color/darker_gray" />
 
+        <!-- Descripción -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Descripción"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/etDescripcion"
@@ -63,15 +67,16 @@
             android:textColor="@color/black"
             android:textColorHint="@color/darker_gray" />
 
+        <!-- Ubicación -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ubicación"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/etUbicacion"
@@ -84,15 +89,16 @@
             android:textColor="@color/black"
             android:textColorHint="@color/darker_gray" />
 
+        <!-- Requisitos -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Requisitos"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/etRequisitos"
@@ -106,15 +112,16 @@
             android:textColor="@color/black"
             android:textColorHint="@color/darker_gray" />
 
+        <!-- Horario -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Horario"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/etHorario"
@@ -127,15 +134,16 @@
             android:textColor="@color/black"
             android:textColorHint="@color/darker_gray" />
 
+        <!-- Horas de trabajo -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Horas de trabajo"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/etHoras"
@@ -149,15 +157,16 @@
             android:textColor="@color/black"
             android:textColorHint="@color/darker_gray" />
 
+        <!-- Pago por hora -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pago por hora"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/suave_texto"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/etPagoHora"
@@ -170,12 +179,13 @@
             android:textColor="@color/black"
             android:textColorHint="@color/darker_gray" />
 
+        <!-- Botones -->
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Guardar Cambios"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@color/suave_boton_primario"
             android:textColor="@color/white"
             android:background="@drawable/boton_gradiente"
@@ -186,10 +196,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Volver"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/boton_gradiente"
             android:backgroundTint="@color/verde_oliva"
             android:textColor="@color/gris_claro"
             android:padding="12dp" />
+
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

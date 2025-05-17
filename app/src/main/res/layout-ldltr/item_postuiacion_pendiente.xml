@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:background="#F0F0F0"
-    android:layout_marginBottom="8dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    android:backgroundTint="@android:color/white"
     tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
 
     <TextView
         android:id="@+id/tvPostulacionId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#333333"
         android:text="ID: "
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="#1A237E"/>
 
     <TextView
         android:id="@+id/tvPuesto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Puesto"/>
+        android:text="Puesto"
+        android:textColor="#424242"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,18 +41,23 @@
         <Button
             android:id="@+id/btnEditar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:backgroundTint="@color/empresa_boton_secundario"
             android:textColor="@android:color/white"
+            android:background="@drawable/boton_gradiente"
+
             android:text="Editar"/>
 
         <Button
             android:id="@+id/btnEliminar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:backgroundTint="@color/red"
             android:textColor="@android:color/white"
             android:text="Eliminar"
+            android:background="@drawable/boton_gradiente"
             android:layout_marginStart="8dp"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+</androidx.cardview.widget.CardView>
