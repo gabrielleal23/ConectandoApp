@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="12dp"
+    android:layout_margin="5dp"
     card_view:cardCornerRadius="16dp"
     card_view:cardElevation="8dp"
     android:backgroundTint="@android:color/white"
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/tvTemaMentoria"

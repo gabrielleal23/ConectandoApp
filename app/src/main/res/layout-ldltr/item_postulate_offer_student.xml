@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@android:color/white"
-    android:elevation="4dp"
-    android:layout_marginBottom="8dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    android:backgroundTint="@android:color/white"
     tools:ignore="MissingDefaultResource">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
 
     <TextView
         android:id="@+id/tvPuesto"
@@ -17,7 +24,7 @@
         android:text="Puesto"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black" />
+        android:textColor="#1A237E" />
 
     <TextView
         android:id="@+id/tvDescripcion"
@@ -25,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Descripción"
         android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#424242"
         android:layout_marginTop="4dp" />
 
     <TextView
@@ -34,7 +41,7 @@
         android:layout_height="wrap_content"
         android:text="Ubicación"
         android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#424242"
         android:layout_marginTop="4dp" />
 
     <TextView
@@ -43,7 +50,7 @@
         android:layout_height="wrap_content"
         android:text="Horario"
         android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#424242"
         android:layout_marginTop="4dp" />
 
     <TextView
@@ -52,7 +59,7 @@
         android:layout_height="wrap_content"
         android:text="Pago por Hora"
         android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#424242"
         android:layout_marginTop="4dp" />
 
     <TextView
@@ -61,7 +68,7 @@
         android:layout_height="wrap_content"
         android:text="Requisitos"
         android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#424242"
         android:layout_marginTop="4dp" />
 
     <TextView
@@ -70,7 +77,7 @@
         android:layout_height="wrap_content"
         android:text="Estado"
         android:textSize="14sp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#424242"
         android:layout_marginTop="4dp" />
 
     <Button
@@ -81,4 +88,5 @@
         android:text="Aceptar"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/neon_boton_secundario" />
-</LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>

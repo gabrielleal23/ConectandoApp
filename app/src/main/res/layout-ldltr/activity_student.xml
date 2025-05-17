@@ -27,21 +27,21 @@
 
         <!-- GRID DE SERVICIOS -->
         <GridLayout
-            android:layout_width="331dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:alignmentMode="alignMargins"
             android:columnCount="2"
             android:rowCount="3"
-            android:rowOrderPreserved="false"
-            android:useDefaultMargins="true">
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true"
+            android:padding="4dp">
 
 
             <LinearLayout
                 android:id="@+id/btnViewJobs"
-                android:layout_width="3dp"
-                android:layout_height="146dp"
-                android:layout_rowWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
                 android:layout_margin="8dp"
                 android:background="@drawable/rounded_gray"
                 android:backgroundTint="@color/color_primario_hover"
@@ -71,10 +71,10 @@
             <!-- 2. TU PERFIL -->
             <LinearLayout
                 android:id="@+id/btnProfile"
-                android:layout_width="3dp"
-                android:layout_height="146dp"
-                android:layout_rowWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
                 android:layout_margin="8dp"
                 android:background="@drawable/rounded_gray"
                 android:backgroundTint="@color/color_secundario"
@@ -103,10 +103,10 @@
 
             <LinearLayout
                 android:id="@+id/btnPaymentMethod"
-                android:layout_width="3dp"
-                android:layout_height="146dp"
-                android:layout_rowWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
                 android:layout_margin="8dp"
                 android:background="@drawable/rounded_gray"
                 android:backgroundTint="@color/color_secundario"
@@ -137,10 +137,10 @@
             <!-- 4. HISTORIAL DE POSTULACIONES -->
             <LinearLayout
                 android:id="@+id/btnHistory"
-                android:layout_width="3dp"
-                android:layout_height="146dp"
-                android:layout_rowWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
                 android:layout_margin="8dp"
                 android:background="@drawable/rounded_gray"
                 android:backgroundTint="@color/color_primario_hover"
@@ -170,10 +170,10 @@
             <!-- 5. SOPORTE TÉCNICO -->
             <LinearLayout
                 android:id="@+id/btnSupport"
-                android:layout_width="3dp"
-                android:layout_height="146dp"
-                android:layout_rowWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
                 android:layout_margin="8dp"
                 android:background="@drawable/rounded_gray"
                 android:backgroundTint="@color/color_primario_hover"
@@ -203,10 +203,10 @@
             <!-- 6. MENTORÍAS -->
             <LinearLayout
                 android:id="@+id/btnMentors"
-                android:layout_width="3dp"
-                android:layout_height="146dp"
-                android:layout_rowWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
                 android:layout_margin="8dp"
                 android:background="@drawable/rounded_gray"
                 android:backgroundTint="@color/color_secundario"

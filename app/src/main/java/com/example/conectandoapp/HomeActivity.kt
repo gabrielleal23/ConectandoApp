@@ -529,6 +529,8 @@ class MentorsActivity : AppCompatActivity() {
             val estado: TextView = view.findViewById(R.id.tvEstadoInscripcion)
             val botonInscribirse: Button = view.findViewById(R.id.btnInscribirse)
             val botonVerInfo: Button = view.findViewById(R.id.btnVerInformacion)
+            val layoutCalificacion: LinearLayout = view.findViewById(R.id.layoutCalificacion)
+
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MentoriaViewHolder {
@@ -551,6 +553,7 @@ class MentorsActivity : AppCompatActivity() {
                 holder.estado.setTextColor(Color.parseColor("#FF5722"))
                 holder.botonInscribirse.isEnabled = false
                 holder.botonVerInfo.visibility = View.GONE
+                holder.layoutCalificacion.visibility = View.GONE
                 return
             }
 
@@ -561,6 +564,7 @@ class MentorsActivity : AppCompatActivity() {
                 holder.estado.setTextColor(Color.parseColor("#4CAF50"))
                 holder.botonInscribirse.visibility = View.GONE
                 holder.botonVerInfo.visibility = View.VISIBLE
+                holder.layoutCalificacion.visibility = View.VISIBLE
                 holder.botonVerInfo.setOnClickListener {
                     val context = holder.itemView.context
                     val intent = Intent(context, VerContenidosMentoriaActivity::class.java)
@@ -573,6 +577,7 @@ class MentorsActivity : AppCompatActivity() {
                 holder.estado.setTextColor(Color.parseColor("#FF5722"))
                 holder.botonInscribirse.visibility = View.VISIBLE
                 holder.botonVerInfo.visibility = View.GONE
+                holder.layoutCalificacion.visibility = View.GONE
             }
 
             holder.botonInscribirse.setOnClickListener {
@@ -598,6 +603,8 @@ class MentorsActivity : AppCompatActivity() {
                     holder.estado.setTextColor(Color.parseColor("#4CAF50"))
                     holder.botonInscribirse.visibility = View.GONE
                     holder.botonVerInfo.visibility = View.VISIBLE
+                    holder.layoutCalificacion.visibility = View.VISIBLE
+
 
                 }.addOnFailureListener { e ->
                     Toast.makeText(holder.itemView.context, "Error al inscribirse: ${e.message}", Toast.LENGTH_SHORT).show()
