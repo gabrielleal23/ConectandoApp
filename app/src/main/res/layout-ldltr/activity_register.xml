@@ -101,30 +101,33 @@
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="Registrar"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/empresa_boton_verde"
         android:textColor="@color/white"
+        android:textSize="16sp"
         android:background="@drawable/boton_gradiente"
-        android:padding="12dp"/>
+        />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="¿Tienes una cuenta?"
         android:layout_marginTop="10dp"
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/suave_boton_primario"
+        android:textSize="16sp"
         android:textColor="@color/gris_claro"
-        android:padding="12dp"/>
+        />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="Volver"
+        android:textSize="16sp"
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/suave_boton_primario"
         android:textColor="@android:color/white"

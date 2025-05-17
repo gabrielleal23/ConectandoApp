@@ -52,12 +52,11 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="Iniciar Sesión"
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/suave_boton_primario"
         android:textColor="@color/white"
-        android:padding="12dp"
         android:textSize="16sp"
         android:layout_marginTop="20dp"/>
 

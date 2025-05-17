@@ -15,7 +15,7 @@
         android:text="Publicar Oferta de Trabajo"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/suave_texto"
+        android:textColor="@color/black"
         android:layout_marginBottom="20dp" />
 
     <EditText
@@ -107,23 +107,25 @@
     <Button
         android:id="@+id/btnPublicar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="Publicar Oferta"
         android:layout_marginTop="20dp"
+        android:textSize="16sp"
         android:backgroundTint="@color/empresa_boton_verde"
         android:textColor="@color/white"
         android:background="@drawable/boton_gradiente"
-        android:padding="12dp" />
+        />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="16sp"
         android:text="Volver"
         android:layout_marginTop="10dp"
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/suave_boton_primario"
         android:textColor="@color/gris_claro"
-        android:padding="12dp" />
+         />
 
 </LinearLayout>

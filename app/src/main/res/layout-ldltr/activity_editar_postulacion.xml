@@ -13,12 +13,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Editar Postulación"
             android:textSize="24sp"
+            android:gravity="center"
             android:textStyle="bold"
-            android:textColor="@color/suave_texto"
+            android:textColor="@color/black"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp" />
 
@@ -183,24 +184,25 @@
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="Guardar Cambios"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/suave_boton_primario"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/empresa_boton_verde"
             android:textColor="@color/white"
             android:background="@drawable/boton_gradiente"
-            android:padding="12dp" />
+            android:textSize="16sp"
+        />
 
         <Button
             android:id="@+id/btnDevolver"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="Volver"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/suave_boton_primario"
+            android:textColor="@color/white"
             android:background="@drawable/boton_gradiente"
-            android:backgroundTint="@color/verde_oliva"
-            android:textColor="@color/gris_claro"
-            android:padding="12dp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 </ScrollView>

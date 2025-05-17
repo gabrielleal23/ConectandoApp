@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +25,9 @@ class PostulacionEmpresaAdapter(private val listaPostulaciones: List<Postulacion
         val tvEstado: TextView = view.findViewById(R.id.tvEstado)
         val tvPostulante : TextView = view.findViewById(R.id.tvPostulante)
         val btnFinalizar: Button = view.findViewById(R.id.btnFinalizar)
+        val ratingBar: RatingBar = view.findViewById(R.id.ratingBar)
+        val tvcalifica: TextView = view.findViewById(R.id.tvcalifica)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -44,13 +48,14 @@ class PostulacionEmpresaAdapter(private val listaPostulaciones: List<Postulacion
         holder.tvPagoHora.text = "Pago por Hora: $${postulacion.pagoHora}"
         holder.tvRequisitos.text = "Requisitos: ${postulacion.requisitos}"
         holder.tvEstado.text = "Estado: ${postulacion.estado}"
-        holder.tvPostulante.text ="Postulante: ${trabajador.nombre}"
-
-        // Acción para Finalizar la oferta
+        holder.tvPostulante.text = "Postulante: ${trabajador.nombre}"
 
         if (postulacion.estado == "Aceptada") {
+            // Mostrar botón Finalizar
             holder.btnFinalizar.visibility = View.VISIBLE
             holder.btnFinalizar.isEnabled = true
+            holder.ratingBar.visibility = View.GONE
+            holder.tvcalifica.visibility = View.GONE
 
             holder.btnFinalizar.setOnClickListener {
                 val db = FirebaseFirestore.getInstance()
@@ -58,21 +63,35 @@ class PostulacionEmpresaAdapter(private val listaPostulaciones: List<Postulacion
                     .update("estado", "Finalizada")
                     .addOnSuccessListener {
                         Toast.makeText(holder.itemView.context, "✅ Oferta finalizada", Toast.LENGTH_SHORT).show()
-                        // Cambia el estado localmente para actualizar UI
                         postulacion.estado = "Finalizada"
                         holder.tvEstado.text = "Estado: Finalizada"
+
                         holder.btnFinalizar.visibility = View.GONE
+                        holder.ratingBar.visibility = View.VISIBLE
+                        holder.tvcalifica.visibility = View.VISIBLE
+
                     }
                     .addOnFailureListener {
                         Toast.makeText(holder.itemView.context, "❌ Error al finalizar", Toast.LENGTH_SHORT).show()
                     }
             }
-        } else {
-            // Para cualquier otro estado, oculta el botón
-            holder.btnFinalizar.visibility = View.GONE
         }
-
+        else if (postulacion.estado == "Finalizada" || postulacion.estado == "Pagada") {
+            // Ocultar botón y mostrar rating visual y texto
+            holder.btnFinalizar.visibility = View.GONE
+            holder.ratingBar.visibility = View.VISIBLE
+            holder.tvcalifica.visibility = View.VISIBLE
+            
+        }
+        else {
+            // Otros estados: ocultar botón y rating
+            holder.btnFinalizar.visibility = View.GONE
+            holder.ratingBar.visibility = View.GONE
+            holder.tvcalifica.visibility = View.GONE
+        }
     }
+
+
 
 
     override fun getItemCount() = listaPostulaciones.size
