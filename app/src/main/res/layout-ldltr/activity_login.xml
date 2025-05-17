@@ -9,6 +9,14 @@
     android:background="@color/white"
     tools:ignore="MissingDefaultResource">
 
+    <ImageView
+        android:id="@+id/miImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_conectando_launcher_round"
+        android:contentDescription="Descripción de la imagen"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,6 +58,7 @@
         android:backgroundTint="@color/suave_boton_primario"
         android:textColor="@color/white"
         android:padding="12dp"
+        android:textSize="16sp"
         android:layout_marginTop="20dp"/>
 
     <TextView

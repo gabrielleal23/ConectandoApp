@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="24dp"
     android:orientation="vertical"
     android:background="#F5F5F5"
@@ -13,9 +13,8 @@
         android:text="👤 Ver y Editar Perfil"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="70dp"
         android:gravity="center"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="6dp"
         android:textColor="#212121" />
 
     <TextView
@@ -36,7 +35,7 @@
         android:padding="14dp"
         android:background="@android:drawable/edit_text"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -58,7 +57,7 @@
         android:padding="14dp"
         android:background="@android:drawable/edit_text"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -80,7 +79,7 @@
         android:padding="14dp"
         android:background="@android:drawable/edit_text"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -121,9 +120,32 @@
         android:id="@+id/spinnerRoledit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:background="@android:drawable/spinner_background"
         android:padding="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calificacion"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:gravity=""
+        android:layout_marginBottom="1dp"
+        android:textColor="#212121" />
+
+    <RatingBar
+        android:id="@+id/ratingOferta"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="2dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="3"
+        android:stepSize="1"
+        android:theme="@style/Widget.AppCompat.RatingBar.Small" />
+
 
     <Button
         android:id="@+id/btnGuardar"
@@ -147,6 +169,6 @@
         android:textColor="@android:color/white"
         android:background="@drawable/boton_gradiente"
         android:padding="1dp"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="5dp" />
 
 </LinearLayout>

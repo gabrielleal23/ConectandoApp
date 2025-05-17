@@ -36,16 +36,17 @@
         android:textColor="@android:color/white"
         android:text="Enviar Mensaje"
         android:background="@drawable/boton_gradiente"
+        android:textSize="16sp"
         android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Volver"
         android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
+        android:textSize="16sp"
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/suave_boton_primario"
-        />
+        android:text="Volver"
+        android:textColor="@android:color/white" />
 </LinearLayout>

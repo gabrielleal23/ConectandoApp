@@ -9,13 +9,14 @@
 
     <TextView
         android:id="@+id/tvTitlePayment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Historial de Pagos"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#111827"
-        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="16dp" />
 
     <TextView
@@ -42,5 +43,5 @@
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/suave_boton_primario"
         android:textColor="@color/gris_claro"
-        android:padding="12dp" />
+        android:textSize="16sp" />
 </LinearLayout>
