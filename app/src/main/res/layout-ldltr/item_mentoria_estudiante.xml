@@ -44,10 +44,42 @@
             android:textColor="#FF5722"
             android:layout_marginBottom="12dp" />
 
+
+
+        <LinearLayout
+            android:id="@+id/layoutCalificacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"> <!-- Oculto por defecto -->
+
+            <TextView
+                android:id="@+id/calificacionoffer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#424242"
+                android:text="Calificacion Del Mentor:" />
+
+        <RatingBar
+            android:id="@+id/ratingOferta"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="1"
+            android:theme="@style/Widget.AppCompat.RatingBar.Small" />
+
+    </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
             <Button
                 android:id="@+id/btnInscribirse"
@@ -57,6 +89,7 @@
                 android:text="Inscribirse"
                 android:backgroundTint="#4CAF50"
                 android:textColor="@android:color/white" />
+
 
             <Button
                 android:id="@+id/btnVerInformacion"
@@ -68,5 +101,6 @@
                 android:backgroundTint="#3F51B5"
                 android:textColor="@android:color/white" />
         </LinearLayout>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

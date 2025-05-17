@@ -42,9 +42,29 @@
         android:layout_height="wrap_content"
         android:text="Pago por hora" />
 
+
+
     <TextView
         android:id="@+id/tvEstadohis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Estado" />
+
+    <TextView
+        android:id="@+id/calificacionoffer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calificacion:" />
+
+    <RatingBar
+        android:id="@+id/ratingOferta"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="3"
+        android:stepSize="1"
+        android:theme="@style/Widget.AppCompat.RatingBar.Small" />
+
 </LinearLayout>

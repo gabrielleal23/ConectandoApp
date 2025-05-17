@@ -20,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import android.graphics.Color
 import android.widget.ArrayAdapter
+import android.widget.RatingBar
 import android.widget.Spinner
 
 
@@ -141,7 +142,8 @@ data class JobApplication(
     val titulo: String = "",
     val empresa: String = "",
     val estado: String = "", // "aceptada", "pendiente", etc.
-    val finalizada: Boolean = false
+    val finalizada: Boolean = false,
+    val calificacion: Float? = null  // Nuevo campo para la calificación
 )
 
 class HistoryAdapter(private val listaOfertasStudent: List<Oferta>) :
@@ -154,6 +156,8 @@ class HistoryAdapter(private val listaOfertasStudent: List<Oferta>) :
         val tvHorario: TextView = view.findViewById(R.id.tvHorario)
         val tvPagoHora: TextView = view.findViewById(R.id.tvPagoHora)
         val tvEstadohis : TextView = view.findViewById(R.id.tvEstadohis)
+        val calificacionoffer : TextView = view.findViewById(R.id.calificacionoffer)
+        val ratingOfertaItem: RatingBar = view.findViewById(R.id.ratingOferta)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -169,13 +173,34 @@ class HistoryAdapter(private val listaOfertasStudent: List<Oferta>) :
         holder.tvUbicacion.text = "📍 ${oferta.ubicacion}"
         holder.tvHorario.text = "⏰ ${oferta.horario}"
         holder.tvPagoHora.text = "💰 Pago Por Hora: $${oferta.pagoHora}"
+        holder.calificacionoffer.text = "Calificacion para el Usuario:"
         holder.tvEstadohis.text = when (oferta.estado) {
-            "Pendiente" -> "⏳ Pendiente"
-            "Aceptada" -> "✅ Aceptada"
-            "Finalizada" -> "🏁 Finalizada"
-            "Rechazada" -> "❌ Rechazada"
-            "En progreso" -> "🔄 En progreso"
+            "Pendiente" -> "Estado: ⏳ Pendiente"
+            "Aceptada" -> "Estado: ✅ Aceptada"
+            "Finalizada" -> " Estado:🏁 Finalizada"
+            "Rechazada" -> " Estado:❌ Rechazada"
+            "En progreso" -> " Estado:🔄 En progreso"
+            "Pagada" -> " Estado: \uD83D\uDCB8 Pagada"
             else -> oferta.estado
+        }
+
+        // Mostrar rating solo si el estado es Pagada o Finalizada
+        if (oferta.estado == "Pagada" || oferta.estado == "Finalizada") {
+            holder.ratingOfertaItem.visibility = View.VISIBLE
+            holder.calificacionoffer.visibility = View.VISIBLE
+            // Si tienes la calificación guardada en oferta, ponla aquí, por ejemplo:
+            holder.ratingOfertaItem.rating = oferta.calificacion ?: 0f
+            // Permitir que usuario cambie la calificación, si quieres:
+            holder.ratingOfertaItem.setOnRatingBarChangeListener { _, rating, fromUser ->
+                if (fromUser) {
+                    // Guardar la calificación en Firestore o localmente
+                    Toast.makeText(holder.itemView.context, "Calificación: $rating", Toast.LENGTH_SHORT).show()
+                    // Implementa la lógica para actualizar la calificación en Firestore aquí
+                }
+            }
+        } else {
+            holder.ratingOfertaItem.visibility = View.GONE
+            holder.calificacionoffer.visibility = View.GONE
         }
     }
 
@@ -491,6 +516,10 @@ class MentorsActivity : AppCompatActivity() {
             val estado: TextView = itemView.findViewById(R.id.tvEstadoInscripcion)
             val botonInscribirse: Button = itemView.findViewById(R.id.btnInscribirse)
             val botonVerInfo: Button = itemView.findViewById(R.id.btnVerInformacion)
+            val layoutCalificacion: LinearLayout = view.findViewById(R.id.layoutCalificacion) // 👈 esto es lo importante
+
+
+
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MentoriaViewHolder {
@@ -501,6 +530,7 @@ class MentorsActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: MentoriaViewHolder, position: Int) {
             val mentoria = mentorias[position]
+
             holder.tema.text = mentoria.tema
             holder.descripcion.text = mentoria.descripcion
 
@@ -512,6 +542,7 @@ class MentorsActivity : AppCompatActivity() {
                 holder.estado.setTextColor(Color.parseColor("#FF5722"))
                 holder.botonInscribirse.isEnabled = false
                 holder.botonVerInfo.visibility = View.GONE
+                holder.layoutCalificacion.visibility = View.GONE
                 return
             }
 
@@ -522,11 +553,13 @@ class MentorsActivity : AppCompatActivity() {
                 holder.estado.setTextColor(Color.parseColor("#4CAF50")) // verde
                 holder.botonInscribirse.visibility = View.GONE
                 holder.botonVerInfo.visibility = View.VISIBLE
+                holder.layoutCalificacion.visibility = View.VISIBLE
             } else {
                 holder.estado.text = "No inscrito ❌"
                 holder.estado.setTextColor(Color.parseColor("#FF5722")) // naranja
                 holder.botonInscribirse.visibility = View.VISIBLE
                 holder.botonVerInfo.visibility = View.GONE
+                holder.layoutCalificacion.visibility = View.GONE
             }
 
             holder.botonInscribirse.setOnClickListener {
@@ -549,26 +582,16 @@ class MentorsActivity : AppCompatActivity() {
                 }.addOnSuccessListener {
                     Toast.makeText(holder.itemView.context, "Inscripción exitosa", Toast.LENGTH_SHORT).show()
                     holder.estado.text = "Ya inscrito ✅"
-                    holder.estado.setTextColor(Color.parseColor("#4CAF50")) // verde
+                    holder.estado.setTextColor(Color.parseColor("#4CAF50"))
                     holder.botonInscribirse.visibility = View.GONE
                     holder.botonVerInfo.visibility = View.VISIBLE
+                    holder.layoutCalificacion.visibility = View.VISIBLE
                 }.addOnFailureListener { e ->
                     Toast.makeText(holder.itemView.context, "Error al inscribirse: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
             }
-
-            // Ver información solo si está inscrito
-            holder.botonVerInfo.setOnClickListener {
-                if (yaInscrito) {
-                    val context = holder.itemView.context
-                    val intent = Intent(context, VerContenidosMentoriaActivity::class.java)
-                    intent.putExtra("MENTORIA_ID", mentoria.id)
-                    context.startActivity(intent)
-                } else {
-                    Toast.makeText(holder.itemView.context, "Debes inscribirte para ver los contenidos", Toast.LENGTH_SHORT).show()
-                }
-            }
         }
+
 
 
         override fun getItemCount(): Int = mentorias.size

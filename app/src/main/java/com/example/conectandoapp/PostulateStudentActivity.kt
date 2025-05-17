@@ -104,7 +104,8 @@ data class Oferta(
     val pagoHora: Double = 0.0,
     val requisitos: String = "",
     val estado: String = "",
-    val trabajador:Trabajador = Trabajador()
+    val trabajador:Trabajador = Trabajador(),
+    val calificacion: Float? = null  // Este campo debe existir
 
 )
 
