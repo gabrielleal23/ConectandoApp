@@ -17,8 +17,8 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.Locale
 import java.text.SimpleDateFormat
+import java.util.Locale
 import java.util.TimeZone
 
 class VerContenidosMentoriaActivity : AppCompatActivity() {
@@ -29,6 +29,7 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
     private var contenidoList = mutableListOf<ContenidoMentoria>()
     private var mentoriaId: String = ""
 
+    private lateinit var etTituloContenido: EditText
     private lateinit var etContenido: EditText
     private lateinit var btnGuardarContenido: Button
     private lateinit var textotit: TextView
@@ -41,18 +42,15 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerContenidos)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-
-
         mentoriaId = intent.getStringExtra("MENTORIA_ID") ?: ""
 
-
-
-        val btnVolver: Button = findViewById(R.id.btnVolver)
-        btnVolver.setOnClickListener { finish() }
-
+        etTituloContenido = findViewById(R.id.etTituloContenido)
         etContenido = findViewById(R.id.etContenidoExtra)
         btnGuardarContenido = findViewById(R.id.btnGuardarContenido)
         textotit = findViewById(R.id.titulocont)
+
+        val btnVolver: Button = findViewById(R.id.btnVolver)
+        btnVolver.setOnClickListener { finish() }
 
         cargarContenidosDeMentoria()
 
@@ -62,19 +60,25 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
         }
 
         btnGuardarContenido.setOnClickListener {
+            val tituloTexto = etTituloContenido.text.toString().trim()
             val contenidoTexto = etContenido.text.toString().trim()
+
+            if (tituloTexto.isEmpty()) {
+                Toast.makeText(this, "El título no puede estar vacío", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             if (contenidoTexto.isEmpty()) {
                 Toast.makeText(this, "El contenido no puede estar vacío", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            guardarContenido(contenidoTexto)
+
+            guardarContenido(tituloTexto, contenidoTexto)
+            etTituloContenido.text.clear()
             etContenido.text.clear()
         }
     }
 
     private fun verificarSiEsMentor(email: String) {
-        //Toast.makeText(this, "Email recibido: $email", Toast.LENGTH_SHORT).show()
-
         db.collection("users")
             .whereEqualTo("email", email)
             .get()
@@ -86,17 +90,17 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
 
                 val documento = documentos.firstOrNull()
                 val rol = documento?.getString("role")?.trim()
-               // Toast.makeText(this, "Rol encontrado: $rol", Toast.LENGTH_SHORT).show()
 
                 if (rol != null) {
                     val puedeAgregarContenido = (rol == "Mentor" || rol == "Admin")
 
-
                     if (puedeAgregarContenido) {
+                        etTituloContenido.visibility = View.VISIBLE
                         etContenido.visibility = View.VISIBLE
                         btnGuardarContenido.visibility = View.VISIBLE
                         textotit.visibility = View.VISIBLE
                     } else {
+                        etTituloContenido.visibility = View.GONE
                         etContenido.visibility = View.GONE
                         btnGuardarContenido.visibility = View.GONE
                         textotit.visibility = View.GONE
@@ -110,8 +114,6 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
             }
     }
 
-
-
     private fun cargarContenidosDeMentoria() {
         db.collection("mentorias")
             .document(mentoriaId)
@@ -121,9 +123,10 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
                 if (document.exists()) {
                     val contenidos = document.get("contenidos") as? List<Map<String, Any>> ?: emptyList()
                     for (item in contenidos) {
+                        val titulo = item["titulo"] as? String ?: ""
                         val texto = item["texto"] as? String ?: ""
                         val fecha = item["fecha"] as? Timestamp
-                        contenidoList.add(ContenidoMentoria(texto, fecha))
+                        contenidoList.add(ContenidoMentoria(titulo, texto, fecha))
                     }
                     contenidoAdapter = ContenidoAdapter(contenidoList)
                     recyclerView.adapter = contenidoAdapter
@@ -134,8 +137,9 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
             }
     }
 
-    private fun guardarContenido(contenidoTexto: String) {
+    private fun guardarContenido(titulo: String, contenidoTexto: String) {
         val nuevoContenido = mapOf(
+            "titulo" to titulo,
             "texto" to contenidoTexto,
             "fecha" to Timestamp.now()
         )
@@ -162,6 +166,7 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
     }
 
     data class ContenidoMentoria(
+        val titulo: String = "",
         val texto: String = "",
         val fecha: Timestamp? = null
     )
@@ -170,19 +175,15 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
         RecyclerView.Adapter<ContenidoAdapter.ContenidoViewHolder>() {
 
         class ContenidoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val tvTituloContenido: TextView = view.findViewById(R.id.tvTituloContenido)
             val tvContenido: TextView = view.findViewById(R.id.tvContenido)
             val tvFecha: TextView = view.findViewById(R.id.tvFecha)
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContenidoViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_contenido_mentoria, parent, false)
-            return ContenidoViewHolder(view)
         }
 
         @RequiresApi(Build.VERSION_CODES.N)
         override fun onBindViewHolder(holder: ContenidoViewHolder, position: Int) {
             val contenido = contenidoList[position]
+            holder.tvTituloContenido.text = contenido.titulo
             holder.tvContenido.text = contenido.texto
 
             val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
@@ -192,6 +193,12 @@ class VerContenidosMentoriaActivity : AppCompatActivity() {
             } ?: "Fecha no disponible"
 
             holder.tvFecha.text = fechaFormateada
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContenidoViewHolder {
+            val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_contenido_mentoria, parent, false)
+            return ContenidoViewHolder(view)
         }
 
         override fun getItemCount() = contenidoList.size

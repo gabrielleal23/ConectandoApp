@@ -18,77 +18,109 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="25dp"
+            android:padding="12dp"
             android:gravity="bottom">
 
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crear Mentoría"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:paddingBottom="16dp" />
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crear Mentoría"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:paddingBottom="16dp" />
 
-    <EditText
-        android:id="@+id/etTema"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tema de la mentoría"
-        android:background="@android:drawable/editbox_background"
-        android:inputType="text"
-        />
+            <!-- Etiqueta Tema -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tema de la mentoría"
+                android:textStyle="bold"
+                android:textColor="@color/suave_texto" />
+            <EditText
+                android:id="@+id/etTema"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el tema"
+                android:background="@android:drawable/editbox_background"
+                android:inputType="text"
+                android:layout_marginBottom="10dp" />
 
-    <EditText
-        android:id="@+id/etDescripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Descripción"
-        android:inputType="textMultiLine"
-        android:background="@android:drawable/editbox_background"
-        android:minLines="3"
-        android:layout_marginTop="10dp"/>
+            <!-- Etiqueta Descripción -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripción"
+                android:textStyle="bold"
+                android:textColor="@color/suave_texto"/>
+            <EditText
+                android:id="@+id/etDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese una descripción"
+                android:inputType="textMultiLine"
+                android:background="@android:drawable/editbox_background"
+                android:minLines="3"
+                android:layout_marginBottom="10dp" />
 
-    <EditText
-        android:id="@+id/etHorario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Horario"
-        android:background="@android:drawable/editbox_background"
-        android:inputType="text"
-        android:layout_marginTop="10dp"/>
+            <!-- Etiqueta Horario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horario"
+                android:textStyle="bold"
+                android:textColor="@color/suave_texto" />
+            <EditText
+                android:id="@+id/etHorario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el horario"
+                android:background="@android:drawable/editbox_background"
+                android:inputType="text"
+                android:layout_marginBottom="10dp" />
 
-    <EditText
-        android:id="@+id/etDuracion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Duración (en horas)"
-        android:background="@android:drawable/editbox_background"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="10dp"/>
+            <!-- Etiqueta Duración -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duración (en horas)"
+                android:textStyle="bold"
+                android:textColor="@color/suave_texto" />
+
+            <EditText
+                android:id="@+id/etDuracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ejemplo: 2"
+                android:background="@android:drawable/editbox_background"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
 
 
+    </ScrollView>
     <Button
         android:id="@+id/btnPublicarMentoria"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="16sp"
         android:text="Publicar Mentoría"
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/empresa_boton_verde"
         android:textColor="@android:color/white"
-        android:layout_marginTop="20dp" />
+        android:layout_marginBottom="10dp" />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="Volver"
+        android:textSize="16sp"
         android:background="@drawable/boton_gradiente"
         android:backgroundTint="@color/suave_boton_primario"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="8dp" />
-        </LinearLayout>
-    </ScrollView>
+        android:textColor="@android:color/white" />
+
 </LinearLayout>

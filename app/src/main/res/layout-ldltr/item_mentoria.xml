@@ -104,6 +104,25 @@
                 android:textColor="@android:color/white"
                 android:layout_marginStart="8dp"/>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvcalifica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calificacion Grupal de los Participantes: "
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textColor="#424242"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1"
+            android:visibility="gone"
+            />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

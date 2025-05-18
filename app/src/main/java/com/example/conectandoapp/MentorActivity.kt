@@ -29,7 +29,6 @@ class MentorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_mentors)
 
         mentorName = findViewById(R.id.mentorName)
-        mentorExperience = findViewById(R.id.mentorExperience)
         btnStudents = findViewById(R.id.btnStudents)
         btnMentorProfile = findViewById(R.id.btnMentorProfile)
         btnSupport = findViewById(R.id.btnSupport)

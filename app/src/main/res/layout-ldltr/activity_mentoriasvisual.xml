@@ -14,8 +14,8 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mentorias"
-        android:layout_marginTop="70dp"
+        android:text="Lista de Mentorias"
+        android:layout_marginTop="10dp"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -45,12 +45,12 @@
         android:id="@+id/btnRefresh"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Actualizar Solicitudes"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/empresa_boton_verde"
+        android:layout_marginTop="15dp"
         android:background="@drawable/boton_gradiente"
-        android:layout_marginTop="15dp" />
+        android:backgroundTint="@color/empresa_boton_verde"
+        android:text="Actualizar Solicitudes"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnVolver"

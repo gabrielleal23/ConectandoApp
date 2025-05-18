@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -98,6 +99,8 @@ class MentoriaAdapter(
         val btnEditar: Button = view.findViewById(R.id.btnEditar)
         val btnEliminar: Button = view.findViewById(R.id.btnEliminar)
         val btnCambiarEstado: Button = view.findViewById(R.id.btnCambiarEstado)
+        val ratingBar: RatingBar = view.findViewById(R.id.ratingBar)
+        val tvCalifica: TextView = view.findViewById(R.id.tvcalifica)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MentoriaViewHolder {
@@ -107,6 +110,8 @@ class MentoriaAdapter(
 
     override fun onBindViewHolder(holder: MentoriaViewHolder, position: Int) {
         val mentoria = listaMentorias[position]
+
+        // Textos normales
         holder.tvTema.text = "🎓 Tema: ${mentoria.tema}"
         holder.tvDescripcion.text = "📌 ${mentoria.descripcion}"
         holder.tvHorario.text = "⏰ Horario: ${mentoria.horario}"
@@ -114,52 +119,62 @@ class MentoriaAdapter(
         holder.tvEstado.text = "📄 Estado: ${mentoria.estado}"
         holder.tvInscritos.text = "👥 Inscritos: ${mentoria.estudiantesInscritos}"
 
+        // Ocultar rating y texto por defecto
+        holder.ratingBar.visibility = View.GONE
+        holder.tvCalifica.visibility = View.GONE
 
-        // Botón Editar → visible solo si no hay estudiantes inscritos
+        // Mostrar/ocultar botones editar y eliminar (igual que antes)
         if (mentoria.estudiantesInscritos == 0) {
             holder.btnEditar.visibility = View.VISIBLE
-            holder.btnEditar.setOnClickListener {
-                val intent = Intent(context, CrearMentoriaActivity::class.java)
-                intent.putExtra("mentoriaId", mentoria.id)
-                context.startActivity(intent)
-            }
+            holder.btnEliminar.visibility = View.VISIBLE
         } else {
             holder.btnEditar.visibility = View.GONE
-        }
-
-        // Botón Eliminar → visible solo si no hay estudiantes inscritos
-        if (mentoria.estudiantesInscritos == 0) {
-            holder.btnEliminar.visibility = View.VISIBLE
-            holder.btnEliminar.setOnClickListener {
-                db.collection("mentorias").document(mentoria.id)
-                    .delete()
-                    .addOnSuccessListener {
-                        Toast.makeText(context, "Mentoría eliminada", Toast.LENGTH_SHORT).show()
-                    }
-                    .addOnFailureListener {
-                        Toast.makeText(context, "Error al eliminar", Toast.LENGTH_SHORT).show()
-                    }
-            }
-        } else {
             holder.btnEliminar.visibility = View.GONE
         }
 
-        // Botón Cambiar Estado → visible solo si hay al menos un estudiante inscrito
-        if (mentoria.estudiantesInscritos > 0) {
+        // Cambiar estado
+        if (mentoria.estudiantesInscritos > 0 && mentoria.estado != "Finalizado") {
             holder.btnCambiarEstado.visibility = View.VISIBLE
-            holder.btnCambiarEstado.setOnClickListener {
-                val nuevoEstado = if (mentoria.estado == "Disponible") "Finalizado" else "Disponible"
-                db.collection("mentorias").document(mentoria.id)
-                    .update("estado", nuevoEstado)
-                    .addOnSuccessListener {
-                        Toast.makeText(context, "Estado actualizado", Toast.LENGTH_SHORT).show()
-                    }
-                    .addOnFailureListener {
-                        Toast.makeText(context, "Error al cambiar estado", Toast.LENGTH_SHORT).show()
-                    }
-            }
         } else {
             holder.btnCambiarEstado.visibility = View.GONE
+        }
+
+        // Si está finalizado, ocultar botón CambiarEstado y mostrar RatingBar solo visual
+        if (mentoria.estado == "Finalizado") {
+            holder.btnCambiarEstado.visibility = View.GONE
+            holder.ratingBar.visibility = View.VISIBLE
+            holder.tvCalifica.visibility = View.VISIBLE
+
+        }
+
+        // Click listeners (igual que antes)
+        holder.btnEditar.setOnClickListener {
+            val intent = Intent(context, CrearMentoriaActivity::class.java)
+            intent.putExtra("mentoriaId", mentoria.id)
+            context.startActivity(intent)
+        }
+
+        holder.btnEliminar.setOnClickListener {
+            db.collection("mentorias").document(mentoria.id)
+                .delete()
+                .addOnSuccessListener {
+                    Toast.makeText(context, "Mentoría eliminada", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(context, "Error al eliminar", Toast.LENGTH_SHORT).show()
+                }
+        }
+
+        holder.btnCambiarEstado.setOnClickListener {
+            val nuevoEstado = if (mentoria.estado == "Disponible") "Finalizado" else "Disponible"
+            db.collection("mentorias").document(mentoria.id)
+                .update("estado", nuevoEstado)
+                .addOnSuccessListener {
+                    Toast.makeText(context, "Estado actualizado", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(context, "Error al cambiar estado", Toast.LENGTH_SHORT).show()
+                }
         }
     }
 

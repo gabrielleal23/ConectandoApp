@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#F9FAFB"
-    android:gravity="center"
     tools:ignore="MissingDefaultResource">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="12dp"
         android:gravity="center_horizontal">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestion De Mentorias"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#111827"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"/>
 
 
     <TextView
@@ -22,18 +31,10 @@
         android:layout_height="wrap_content"
         android:text="Nombre del Mentor"
         android:textSize="18sp"
-        android:textStyle="bold"
         android:textColor="@android:color/black"
         android:layout_marginBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/mentorExperience"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Experiencia del Mentor"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="16dp"/>
+
 
         <GridLayout
             android:layout_width="match_parent"
@@ -68,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Crear Mentoria"
+                android:text="CREAR MENTORIA"
                 android:textSize="14sp"
                 android:textColor="@color/color_texto_oscuro"
                 android:gravity="center"/>
@@ -99,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Visualizacion de Mentorias"
+                android:text="VISUALIZACION DE MENTORIAS"
                 android:textSize="14sp"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
@@ -130,7 +131,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contenido de Mentorias"
+                android:text="CONTENIDO DE MENTORIAS"
                 android:textSize="14sp"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
@@ -159,7 +160,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tu Perfil"
+                android:text="TU PERFIL"
                 android:textSize="14sp"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
@@ -189,7 +190,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soporte"
+                android:text="SOPORTE"
                 android:textSize="14sp"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
@@ -208,7 +209,8 @@
         android:background="@drawable/boton_gradiente"
         android:layout_marginTop="32dp"
         android:padding="1dp"
-        android:backgroundTint="@android:color/holo_red_dark"/>
+        android:backgroundTint="@android:color/holo_red_dark" />
 
     </LinearLayout>
-</LinearLayout>
+
+</ScrollView >
