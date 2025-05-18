@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/itemMentoria"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF"
-    android:elevation="2dp"
-    android:layout_marginBottom="8dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="8dp"
+    android:backgroundTint="@android:color/white"
     tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
 
     <TextView
         android:id="@+id/tvMentoriaTitulo"
@@ -31,35 +37,50 @@
         android:layout_marginBottom="8dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
         <Button
             android:id="@+id/btnEditMentoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Editar"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/boton_gradiente"
             android:backgroundTint="#03A9F4"
-            android:textColor="#FFFFFF"
-            />
-
-
-        <Button
-            android:id="@+id/btnDeleteMentoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Eliminar"
-            android:backgroundTint="#F44336"
+            android:text="Editar"
             android:textColor="#FFFFFF" />
+
+
 
         <Button
             android:id="@+id/btnContenidoMentoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contenido"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/boton_gradiente"
             android:backgroundTint="@color/purple_700"
-            android:textColor="#FFFFFF"
-            />
+            android:text="Contenido"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDeleteMentoria"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/boton_gradiente"
+            android:backgroundTint="#F44336"
+            android:text="Eliminar"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
+
 </LinearLayout>
+
+</androidx.cardview.widget.CardView>

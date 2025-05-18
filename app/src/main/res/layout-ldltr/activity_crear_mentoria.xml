@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="5dp"
+    android:padding="12dp"
     android:background="#FFFFFF"
     tools:ignore="MissingDefaultResource">
 
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp"
+            android:padding="1dp"
             android:gravity="bottom">
 
             <TextView

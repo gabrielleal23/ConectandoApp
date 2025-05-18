@@ -63,6 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:gravity="center"
+                    android:textStyle="bold"
                     android:text="POSTÚLATE A EMPLEOS"
                     android:textColor="@color/color_texto_oscuro"
                     android:textSize="14sp" />
@@ -97,6 +98,7 @@
                     android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:text="TU PERFIL"
+                    android:textStyle="bold"
                     android:textColor="@color/color_texto_oscuro"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -130,6 +132,7 @@
                     android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:text="POSTULACIONES PAGADAS"
+                    android:textStyle="bold"
                     android:textColor="@color/color_texto_oscuro"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -163,6 +166,7 @@
                     android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:text="HISTORIAL DE POSTULACIONES"
+                    android:textStyle="bold"
                     android:textColor="@color/color_texto_oscuro"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -196,6 +200,7 @@
                     android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:text="SOPORTE TÉCNICO"
+                    android:textStyle="bold"
                     android:textColor="@color/color_texto_oscuro"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -229,6 +234,7 @@
                     android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:text="MENTORÍAS"
+                    android:textStyle="bold"
                     android:textColor="@color/color_texto_oscuro"
                     android:textSize="14sp" />
             </LinearLayout>

@@ -71,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:text="CREAR MENTORIA"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 android:textColor="@color/color_texto_oscuro"
                 android:gravity="center"/>
         </LinearLayout>
@@ -102,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="VISUALIZACION DE MENTORIAS"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
         </LinearLayout>
@@ -133,6 +135,7 @@
                 android:layout_height="wrap_content"
                 android:text="CONTENIDO DE MENTORIAS"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
         </LinearLayout>
@@ -162,6 +165,7 @@
                 android:layout_height="wrap_content"
                 android:text="TU PERFIL"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
         </LinearLayout>
@@ -191,6 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SOPORTE"
+                android:textStyle="bold"
                 android:textSize="14sp"
                 android:backgroundTint ="@color/color_secundario"
                 android:gravity="center"/>
